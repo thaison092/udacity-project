@@ -21,12 +21,12 @@ class Config(object):
     # In your production app, Microsoft recommends you to use other ways to store your secret,
     # such as KeyVault, or environment variable as described in Flask's documentation here:
     # https://flask.palletsprojects.com/en/1.1.x/config/#configuring-from-environment-variables
-    CLIENT_SECRET = "YvB8Q~p~grh81DW.xcbrAAzSmOKCX~bqLhkj8asH"
+    CLIENT_SECRET = "RmZ8Q~fbH9d4ZVdaCwA-E-h_ZZ9O1fCpdGpo0cBj"
 
     AUTHORITY = "https://login.microsoftonline.com/common"  # For multi-tenant app, else put tenant name
     # AUTHORITY = "https://login.microsoftonline.com/Enter_the_Tenant_Name_Here"
 
-    CLIENT_ID = "bd96d3ee-20f9-4701-833d-4e8c4ace8855"
+    CLIENT_ID = "df980e78-579e-442e-b134-4729c74848a0"
 
     REDIRECT_PATH = "/getAToken"  # Used to form an absolute URL; must match to app's redirect_uri set in AAD
 
