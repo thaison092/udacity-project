@@ -8,7 +8,9 @@ from werkzeug.utils import secure_filename
 from flask import flash
 
 blob_container = app.config['BLOB_CONTAINER']
-blob_service = BlobServiceClient.from_connection_string(app.config['BLOB_CONNECTION_STRING'])
+storage_url = "https://{}.blob.core.windows.net/".format(app.config['BLOB_ACCOUNT'])
+# blob_service = BlobServiceClient.from_connection_string(app.config['BLOB_CONNECTION_STRING'])
+blob_service = BlobServiceClient(account_url=storage_url, credential=app.config['BLOB_STORAGE_KEY'])
 container_client = blob_service.get_container_client(blob_container)
 
 def id_generator(size=32, chars=string.ascii_uppercase + string.digits):
