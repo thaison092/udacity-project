@@ -10,7 +10,7 @@ class Config(object):
     BLOB_ACCOUNT = os.environ.get('BLOB_ACCOUNT') or 'udacitystorage'
     BLOB_CONTAINER = os.environ.get('BLOB_CONTAINER') or 'images'
 
-    SQL_SERVER = os.environ.get('SQL_SERVER') or 'udacity-db-server.database.windows.net'
+    SQL_SERVER = os.environ.get('SQL_SERVER') or 'udacity-server.database.windows.net'
     SQL_DATABASE = os.environ.get('SQL_DATABASE') or 'udacity-db'
     SQL_USER_NAME = os.environ.get('SQL_USER_NAME') or 'udacityadmin'
     SQL_PASSWORD = os.environ.get('SQL_PASSWORD') or 'sonpt@0902'
