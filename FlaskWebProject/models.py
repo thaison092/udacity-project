@@ -5,7 +5,8 @@ from flask_login import UserMixin
 # from azure.storage.blob import BlockBlobService
 from azure.storage.blob import BlobServiceClient
 import string, random
-from werkzeug import secure_filename
+# from werkzeug import secure_filename
+from werkzeug.utils import secure_filename
 from flask import flash
 
 blob_container = app.config['BLOB_CONTAINER']
