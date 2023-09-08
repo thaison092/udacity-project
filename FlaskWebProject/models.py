@@ -2,16 +2,13 @@ from datetime import datetime
 from FlaskWebProject import app, db, login
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
-from azure.storage.blob import BlobServiceClient
+from azure.storage.blob import BlockBlobService
 import string, random
-from werkzeug.utils import secure_filename
+from werkzeug import secure_filename
 from flask import flash
 
 blob_container = app.config['BLOB_CONTAINER']
-storage_url = "https://{}.blob.core.windows.net/".format(app.config['BLOB_ACCOUNT'])
-# blob_service = BlobServiceClient.from_connection_string(app.config['BLOB_CONNECTION_STRING'])
-blob_service = BlobServiceClient(account_url=storage_url, credential=app.config['BLOB_STORAGE_KEY'])
-container_client = blob_service.get_container_client(blob_container)
+blob_service = BlockBlobService(account_name=app.config['BLOB_ACCOUNT'], account_key=app.config['BLOB_STORAGE_KEY'])
 
 def id_generator(size=32, chars=string.ascii_uppercase + string.digits):
     return ''.join(random.choice(chars) for _ in range(size))
@@ -60,12 +57,11 @@ class Post(db.Model):
             Randomfilename = id_generator();
             filename = Randomfilename + '.' + fileextension;
             try:
-                container_client.upload_blob(filename, file)
+                blob_service.create_blob_from_stream(blob_container, filename, file)
                 if(self.image_path):
-                    container_client.delete_blob(self.image_path)
-            except Exception as err:
-                app.logger.error(err)
-                flash(err)
+                    blob_service.delete_blob(blob_container, self.image_path)
+            except Exception:
+                flash(Exception)
             self.image_path =  filename
         if new:
             db.session.add(self)
