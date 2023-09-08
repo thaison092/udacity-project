@@ -15,7 +15,7 @@ class Config(object):
     # SQL_PASSWORD = os.environ.get('SQL_PASSWORD') or 'ENTER_SQL_SERVER_PASSWORD'
     
     # BLOB_STORAGE_KEY = os.environ.get('BLOB_STORAGE_KEY') or 'QOGw6ISSMk0mMX6P6z7ABDGabEsXco8mizaWN9bs9FJshVuea7Qs4+K0DRBStjXJE3P08S1ZS03b+AStsY7Elw=='
-    BLOB_ACCOUNT = os.environ.get('BLOB_ACCOUNT') or 'udacitystorage'
+    BLOB_ACCOUNT = os.environ.get('BLOB_ACCOUNT') or 'udacitystoragev1'
     BLOB_CONTAINER = os.environ.get('BLOB_CONTAINER') or 'images'
 
     SQL_SERVER = os.environ.get('SQL_SERVER') or 'udacity-server.database.windows.net'
