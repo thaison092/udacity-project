@@ -5,7 +5,7 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 class Config(object):
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'secret-key'
 
-    BLOB_CONNECTION_STRING = os.environ.get('BLOB_CONNECTION_STRING') or 'DefaultEndpointsProtocol=https;AccountName=udacitystorage;AccountKey=QOGw6ISSMk0mMX6P6z7ABDGabEsXco8mizaWN9bs9FJshVuea7Qs4+K0DRBStjXJE3P08S1ZS03b+AStsY7Elw==;EndpointSuffix=core.windows.net'
+    BLOB_CONNECTION_STRING = os.environ.get('BLOB_CONNECTION_STRING') or 'DefaultEndpointsProtocol=https;AccountName=udacitystoragev1;AccountKey=xezS8OtKdEN14+llMIDni3YuSpoDkU4Y1EbjM5svkQ47TU1qHRQuV7z4h5QCwf9GuEpTkOM3ZzsK+ASt62JbjQ==;EndpointSuffix=core.windows.net'
     # BLOB_ACCOUNT = os.environ.get('BLOB_ACCOUNT') or 'ENTER_BLOB_ACCOUNT_NAME'
     # BLOB_CONTAINER = os.environ.get('BLOB_CONTAINER') or 'ENTER_IMAGES_CONTAINER_NAME'
 
